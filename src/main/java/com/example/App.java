@@ -1,26 +1,14 @@
-package com.example;
-
+package com.util;
 public class App {
-
-    public int add(int a, int b) {
-        return a + b;
+    public static String checkOddEven(int n) { return (n % 2 == 0) ? "Even" : "Odd"; }
+    public static int sumDigits(int n) {
+        int sum = 0;
+        while (n != 0) { sum += Math.abs(n % 10); n /= 10; }
+        return sum;
     }
-    public int subtract(int a, int b) {
-        return a - b;
-    }
-    public int multiply(int a, int b) {
-        return a * b;
-    }
-
-    public int divide(int a, int b) {
-        if (b == 0) {
-            throw new ArithmeticException("Cannot divide by zero");
-        }
-        return a / b;
-    }
-
-    public static void main(String[] args) {
-        App calc = new App();
-        System.out.println("Addition: " + calc.add(5,3));
+    public static int reverseNumber(int n) {
+        int rev = 0;
+        while (n != 0) { rev = rev * 10 + (n % 10); n /= 10; }
+        return rev;
     }
 }
