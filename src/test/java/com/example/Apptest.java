@@ -1,29 +1,26 @@
-package com.example;
+package com.util;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class AppTest {
 
-    App app = new App();
-
     @Test
-    void testAddition() {
-        assertEquals(8, app.add(5,3));
+    public void testCheckOddEven() {
+        assertEquals("Even", App.checkOddEven(10));
+        assertEquals("Odd", App.checkOddEven(7));
     }
 
     @Test
-    void testSubtraction() {
-        assertEquals(2, app.subtract(5,3));
+    public void testSumDigits() {
+        assertEquals(6, App.sumDigits(123)); 
+        assertEquals(10, App.sumDigits(505)); 
     }
 
     @Test
-    void testMultiplication() {
-        assertEquals(15, app.multiply(5,3));
-    }
+    public void testReverseNumber() {
 
-    @Test
-    void testDivision() {
-        assertEquals(2, app.divide(6,3));
+        assertEquals(321, App.reverseNumber(123));
+        assertEquals(-4321, App.reverseNumber(-1234));
     }
 }
